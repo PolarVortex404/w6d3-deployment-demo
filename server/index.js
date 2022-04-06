@@ -1,0 +1,12 @@
+const express = require('express')
+const path = require('path')
+
+const app = express()
+
+app.get('/',(req,res) =>{ //
+    res.sendFile(path.join(__dirname,'../index.html')) //dirname = name of director where file is located, 
+})
+
+const PORT = process.env.PORT || 4005 //whatever port HEROKU finds
+
+app.listen(PORT, () => { console.log(`Listening on ${PORT}`)})
